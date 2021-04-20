@@ -70,6 +70,8 @@ header .btn-menu i {
     padding: 15px 0px;
     background-color: rgb(0, 0, 0);
     z-index: 2;
+    background: linear-gradient(135deg, #000 , #1115);
+    
 }
 .menu .container-menu {
     width: 100%;
@@ -235,7 +237,8 @@ main {
 .btn:active {
     opacity: .7;
 }
-@media only screen and (max-width: 512px) {
+@media only screen and (max-width: 512px),
+only screen and (max-width: 825px) and (max-height: 415px) and (orientation: landscape) {
     /* Cabecera */
     .header {
         z-index: 10;
@@ -312,5 +315,53 @@ main {
         margin: 5px 0;
         font-size: 20px;
         height: 30px;
+    }
+}
+
+@media only screen and (max-width: 825px) and (max-height: 415px) and (orientation: landscape) {
+    /* .fondo-menu .menu {
+        opacity: .95;
+        background: linear-gradient(135deg, #000, #222);
+        
+    } */
+    .menu .container-menu {
+        display: grid;
+        grid-template-columns: 1fr 1fr ;
+        grid-template-rows: repeat(5,auto);
+        gap: 2px;
+        justify-items: center;
+        align-items: center;
+    }
+    .menu .container-menu .value,
+    .menu .container-menu .insert,
+    .menu .container-menu .start,
+    .menu .container-menu .error-menu {
+        margin: 0px;
+        padding: 0px;
+    }
+    .menu .container-menu h2 {
+        grid-column: 1/-1;
+    }
+    .menu .container-menu .insert-array {
+        grid-row: 2/3;
+        grid-column: 1/2;
+    }
+    .menu .container-menu .insert-time {
+        grid-row: 4/5;
+        grid-column: 1/2;
+    }
+    .menu .container-menu #arr-ingresado{
+        grid-row: 3/4 ;
+    }
+    .menu .container-menu #time-ingresado {
+        grid-row: 5/6;
+    }
+    .menu .container-menu .start {
+        grid-row: 2/span 2;
+        align-self: flex-end;
+    }
+    .menu .container-menu .error-menu {
+        grid-row: 4/span 2;
+        align-self: flex-end;
     }
 }
