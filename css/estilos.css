@@ -317,7 +317,7 @@ main {
     /* Cabecera */
     .header {
         z-index: 10;
-        padding: 10px;
+        padding: 5px;
     }
     .header h1 {
         font-size: 20px;
