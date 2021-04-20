@@ -13,11 +13,8 @@ body {
     background-repeat: no-repeat;
     width: 100%;
     min-width: 280px;
-    min-height: 490px;
     position: relative;
     height: 100vh;
-    overflow-y: auto;
-    min-height: 385px;
 }
 
 /* --------------------------------------- */
@@ -28,7 +25,7 @@ body {
     width: 100%;
     height: auto;
     background-color: rgb(0, 0, 0);
-    padding: 20px 0px;
+    padding: 10px 0px;
     border-bottom: 1px solid #fff;
     margin-bottom: 10px;
     position: relative;
@@ -159,6 +156,7 @@ main {
     flex-wrap: nowrap;
     margin: auto;
     justify-content: center;
+    overflow: auto;
 }
 .array_container {
     display: inline-flex;
@@ -171,6 +169,7 @@ main {
     background: rgb(245, 26, 26);
     margin: 0px 1px 0px 1px;
     box-shadow: 0px 0px 3px #000 inset;
+    padding: 0px 5px;
 }
 .array_element p {
     font-weight: bold;
@@ -182,6 +181,8 @@ main {
 }
 /*---- Error en la sección principal----*/
 .error-main {
+    position: absolute;
+    bottom: 120px;
     display: none;
     width: 100%;
     font-size: 13px;
@@ -240,6 +241,7 @@ main {
     /* Cabecera */
     .header {
         z-index: 10;
+        padding: 10px;
     }
     .header h1 {
         font-size: 25px;
@@ -274,18 +276,39 @@ main {
         justify-content: space-between;
         padding: 5px;
     }
+    .header h1 {
+        font-size: 20px;
+        margin: 0px 50px;
+    }
     .header .change-tema,
     .header .btn-menu {
         position: relative;
     }
-    
+    /* main */
+    main {
+        height: 40vh;
+        overflow-y: auto;
+    }
+    .array_element {
+        width: 30px;
+        height: 30px;
+        overflow-x: auto;
+    }
+    .array_element p {
+        line-height: 30px;
+        font-size: 1.1em;
+        overflow-x: auto;
+    }
+
     /* footer - controladores de animación(botones) */
     .footer .container_btn {
         flex-wrap: wrap;
-        padding: 10px 10px;
+        padding: 10px;
     }
     .footer .container_btn .btn {
         width: 100%;
         margin: 5px 0;
+        font-size: 20px;
+        height: 30px;
     }
 }
