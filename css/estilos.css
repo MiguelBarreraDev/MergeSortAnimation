@@ -77,7 +77,7 @@ header .btn-menu i {
 .menu .container-menu {
     width: 100%;
     position: absolute;
-    top: 90px;
+    top: 75px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -210,7 +210,7 @@ main {
     flex-wrap: nowrap;
 }
 .footer .container_btn > .btn {
-    margin: 20px 5px;
+    margin: 20px 15px;
     width: 300px;
     min-width: 150px;
     height: 40px;
@@ -310,5 +310,42 @@ main {
         margin: 5px 0;
         font-size: 20px;
         height: 30px;
+    }
+}
+
+@media only screen and (max-height: 420px) {
+    /* Cabecera */
+    .header {
+        z-index: 10;
+        padding: 10px;
+    }
+    .header h1 {
+        font-size: 20px;
+        text-align: center;
+        margin: 0px 25px;
+    }
+    .header .change-tema {
+        right: 5px;
+    }
+    /* Menu */
+    .header .btn-menu {
+        height: auto;
+        font-size: 20px;
+        left: 5px;   
+    }
+    .header .btn-menu i {
+        display: inline;
+        line-height: 23px;
+    }
+    .fondo-menu {
+        opacity: .95;
+        z-index: 4;
+    }
+    .fondo-menu .menu {
+        width: 100%;
+        min-width: 280px;
+    }
+    .fondo-menu .menu .container-menu {
+        top: 60px;
     }
 }
