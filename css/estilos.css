@@ -13,11 +13,8 @@ body {
     background-repeat: no-repeat;
     width: 100%;
     min-width: 280px;
-    min-height: 490px;
     position: relative;
     height: 100vh;
-    overflow-y: auto;
-    min-height: 385px;
 }
 
 /* --------------------------------------- */
@@ -28,12 +25,12 @@ body {
     width: 100%;
     height: auto;
     background-color: rgb(0, 0, 0);
-    padding: 20px 0px;
+    padding: 10px 0px;
     border-bottom: 1px solid #fff;
     margin-bottom: 10px;
     position: relative;
     justify-content: center;
-    z-index: 2;
+    z-index: 10;
 }
 /* Estilos para el boton del menu */
 header .btn-menu {
@@ -58,39 +55,39 @@ header .btn-menu i {
 /* Estilos para el contenido del menu */
 .fondo-menu {
     position: absolute;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: auto;
     background-color: rgb(12, 11, 11, .8);
     z-index: 2;
     left: -100%;
     transition: left .3s ease-out;
+    top: 57px;
 }
 .fondo-menu .menu {
-    display: none;
-    position: absolute;
-    left: 0px;
+    position: relative;
     width: 300px;
     height: 100vh;
-    text-align: left;
-    top: 0px;
+    padding: 15px 0px;
     background-color: rgb(0, 0, 0);
-    display: flex;
-    justify-content: center;
+    z-index: 2;
+    background: linear-gradient(135deg, #000 , #1115);
+    
 }
 .menu .container-menu {
     width: 100%;
-    position: absolute;
-    top: 90px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    position: relative;
+    display: inline-block;
+    height:min-content;
+    text-align: center;
 }
 .menu .container-menu > h2 {
     color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 2px #f00;
 }
-.menu .insert {
+.menu .container-menu .insert {
+    display: inline-block;
+    height: auto;
     text-align: left;
-    display: block;
     width: 90%;
     color: #fff;
     font-size: 15px;
@@ -130,10 +127,10 @@ header .btn-menu i {
 }
 /*---- Tittulo de la página ----*/
 .header h1 {
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     font-size: 30px;
     color: rgb(255, 255, 255);
-    font-weight: bold;
+    text-shadow: 2px 2px 5px #55f;
 }
 /* --- Boton-Cambio de tema de la página --- */
 header .change-tema {
@@ -159,6 +156,7 @@ main {
     flex-wrap: nowrap;
     margin: auto;
     justify-content: center;
+    overflow: auto;
 }
 .array_container {
     display: inline-flex;
@@ -171,6 +169,7 @@ main {
     background: rgb(245, 26, 26);
     margin: 0px 1px 0px 1px;
     box-shadow: 0px 0px 3px #000 inset;
+    padding: 0px 5px;
 }
 .array_element p {
     font-weight: bold;
@@ -182,6 +181,8 @@ main {
 }
 /*---- Error en la sección principal----*/
 .error-main {
+    position: absolute;
+    bottom: 120px;
     display: none;
     width: 100%;
     font-size: 13px;
@@ -209,7 +210,7 @@ main {
     flex-wrap: nowrap;
 }
 .footer .container_btn > .btn {
-    margin: 20px 5px;
+    margin: 20px 15px;
     width: 300px;
     min-width: 150px;
     height: 40px;
@@ -236,10 +237,12 @@ main {
 .btn:active {
     opacity: .7;
 }
-@media only screen and (max-width: 512px) {
+@media only screen and (max-width: 512px),
+only screen and (max-width: 825px) and (max-height: 415px) and (orientation: landscape) {
     /* Cabecera */
     .header {
         z-index: 10;
+        padding: 10px;
     }
     .header h1 {
         font-size: 25px;
@@ -262,6 +265,7 @@ main {
     .fondo-menu {
         opacity: .9;
         z-index: 4;
+        top: 50px;
     }
     .fondo-menu .menu {
         width: 100%;
@@ -274,18 +278,90 @@ main {
         justify-content: space-between;
         padding: 5px;
     }
+    .header h1 {
+        font-size: 20px;
+        margin: 0px 50px;
+    }
     .header .change-tema,
     .header .btn-menu {
         position: relative;
     }
-    
+    .fondo-menu {
+        top: 57px;
+    }
+    /* main */
+    main {
+        height: 40vh;
+        overflow-y: auto;
+    }
+    .array_element {
+        width: 30px;
+        height: 30px;
+        overflow-x: auto;
+    }
+    .array_element p {
+        line-height: 30px;
+        font-size: 1.1em;
+        overflow-x: auto;
+    }
+
     /* footer - controladores de animación(botones) */
     .footer .container_btn {
         flex-wrap: wrap;
-        padding: 10px 10px;
+        padding: 10px;
     }
     .footer .container_btn .btn {
         width: 100%;
         margin: 5px 0;
+        font-size: 20px;
+        height: 30px;
+    }
+}
+
+@media only screen and (max-width: 825px) and (max-height: 415px) and (orientation: landscape) {
+    /* .fondo-menu .menu {
+        opacity: .95;
+        background: linear-gradient(135deg, #000, #222);
+        
+    } */
+    .menu .container-menu {
+        display: grid;
+        grid-template-columns: 1fr 1fr ;
+        grid-template-rows: repeat(5,auto);
+        gap: 2px;
+        justify-items: center;
+        align-items: center;
+    }
+    .menu .container-menu .value,
+    .menu .container-menu .insert,
+    .menu .container-menu .start,
+    .menu .container-menu .error-menu {
+        margin: 0px;
+        padding: 0px;
+    }
+    .menu .container-menu h2 {
+        grid-column: 1/-1;
+    }
+    .menu .container-menu .insert-array {
+        grid-row: 2/3;
+        grid-column: 1/2;
+    }
+    .menu .container-menu .insert-time {
+        grid-row: 4/5;
+        grid-column: 1/2;
+    }
+    .menu .container-menu #arr-ingresado{
+        grid-row: 3/4 ;
+    }
+    .menu .container-menu #time-ingresado {
+        grid-row: 5/6;
+    }
+    .menu .container-menu .start {
+        grid-row: 2/span 2;
+        align-self: flex-end;
+    }
+    .menu .container-menu .error-menu {
+        grid-row: 4/span 2;
+        align-self: flex-end;
     }
 }
