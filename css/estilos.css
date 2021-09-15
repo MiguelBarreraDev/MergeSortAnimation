@@ -44,6 +44,7 @@ header .btn-menu {
     outline: none;
     cursor: pointer;
     border: none;
+    overflow: hidden;
 }
 header .btn-menu:active {
     color: #ccc;
@@ -66,7 +67,7 @@ header .btn-menu i {
 .fondo-menu .menu {
     position: relative;
     width: 300px;
-    height: 100vh;
+    height: calc(100vh - 57px);
     padding: 15px 0px;
     background-color: rgb(0, 0, 0);
     z-index: 2;
