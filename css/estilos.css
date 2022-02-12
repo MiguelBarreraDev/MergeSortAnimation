@@ -77,7 +77,7 @@ header .btn-menu i {
     width: 100%;
     height: auto;
     background-color: rgb(12, 11, 11, .8);
-    z-index: 2;
+    z-index: 15;
     left: -100%;
     transition: left .3s ease-out;
     top: 57px;
@@ -130,6 +130,7 @@ header .btn-menu i {
     box-shadow: 0px 0px 5px #ccc inset;
     border-radius: 5px;
     border: none;
+    cursor: pointer;
 }
 .menu .container-menu .start:active {
     background-color: rgb(8, 8, 165, .7);
