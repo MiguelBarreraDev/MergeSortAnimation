@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "CascadiaCode";
+    src: url("./fonts/CascadiaCode.ttf");
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -8,13 +13,26 @@
 }
 
 body {
-    /* background: linear-gradient(to top, rgba(25, 25, 131, 0.746), rgba(36, 36, 80, 0.842)); */
-    background: linear-gradient(to bottom, rgba(40, 40, 82, 0.746), rgba(147, 147, 194, 0.842));
+    /*background: linear-gradient(to bottom, rgba(40, 40, 82, 0.746), rgba(147, 147, 194, 0.842));*/
+    background-image: url("./img/code-night.jpg");
     background-repeat: no-repeat;
-    width: 100%;
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
     min-width: 280px;
     position: relative;
     height: 100vh;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0 ,0, .5);
+    backdrop-filter: blur(10px);
 }
 
 /* --------------------------------------- */
@@ -24,9 +42,9 @@ body {
     display: flex;
     width: 100%;
     height: auto;
-    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0);
     padding: 10px 0px;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid #fff0;
     margin-bottom: 10px;
     position: relative;
     justify-content: center;
@@ -39,8 +57,8 @@ header .btn-menu {
     width: 40px;
     height: 40px;
     font-size: 30px;
-    background-color: #000;
     color: #fff;
+    background-color: transparent;
     outline: none;
     cursor: pointer;
     border: none;
@@ -59,7 +77,7 @@ header .btn-menu i {
     width: 100%;
     height: auto;
     background-color: rgb(12, 11, 11, .8);
-    z-index: 2;
+    z-index: 15;
     left: -100%;
     transition: left .3s ease-out;
     top: 57px;
@@ -112,6 +130,7 @@ header .btn-menu i {
     box-shadow: 0px 0px 5px #ccc inset;
     border-radius: 5px;
     border: none;
+    cursor: pointer;
 }
 .menu .container-menu .start:active {
     background-color: rgb(8, 8, 165, .7);
@@ -130,6 +149,7 @@ header .btn-menu i {
 .header h1 {
     letter-spacing: 1.5px;
     font-size: 30px;
+    font-family: "CascadiaCode";
     color: rgb(255, 255, 255);
     text-shadow: 2px 2px 5px #55f;
 }
@@ -198,11 +218,12 @@ main {
 /* -------------------------------------------- */
 .footer {
     width: 100%;
-    background-color: rgb(12, 11, 11, 1);
+    /*background-color: rgb(12, 11, 11, 1);*/
+    background-color: transparent;
     height: auto;
     position: absolute;
     bottom: 0;
-    border-top: 1px solid #ccc;
+    /*border-top: 1px solid #ccc;*/
     z-index: 2;
 }
 .footer > .container_btn {
@@ -211,7 +232,7 @@ main {
     flex-wrap: nowrap;
 }
 .footer .container_btn > .btn {
-    margin: 20px 15px;
+    margin: 0 20px 40px 20px;
     width: 300px;
     min-width: 150px;
     height: 40px;
@@ -224,16 +245,29 @@ main {
     cursor: pointer;
     position: relative;
     border: none;
-    border-radius: 10px;
-    border-bottom: 2px solid #000;
-    border-right: 3px solid #000;
-    box-shadow: 1px 1px 3px #ccc;
+    font-family: "CascadiaCode";
+    background: transparent;
+    border-bottom: 2px solid #fff;
+    color: #fff;
+    border-radius: 5px;
 }
 .btn_ordenar {
-    background: linear-gradient(150deg, rgb(10, 240, 10),#cfc);
+    border-bottom: 1px solid #cfc;
 }
 .btn_reiniciar {
-    background: linear-gradient(150deg, rgb(255, 0, 0) ,#fcc);
+    border-bottom: 1px solid #fcc;
+}
+.btn_ordenar:hover {
+    /*background: linear-gradient(150deg, rgb(10, 240, 10),#cfc);*/
+    transition: all .2s linear;
+    color: #cfc;
+    box-shadow: 1px 1px 5px #cfc;
+}
+.btn_reiniciar:hover {
+    /*background: linear-gradient(150deg, rgb(255, 0, 0) ,#fcc);*/
+    transition: all .2s linear;
+    color: #fcc;
+    box-shadow: 1px 1px 5px #fcc;
 }
 .btn:active {
     opacity: .7;
