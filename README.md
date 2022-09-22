@@ -15,6 +15,3 @@
 | HTML | CSS | JS | Algorithm|
 |------|-----|---|----|
 |<img width="50px" src="https://user-images.githubusercontent.com/82726832/153740434-62832e93-24cc-46f2-b985-9e144a20b257.png">| <img width="50px" src="https://user-images.githubusercontent.com/82726832/153740560-45d6c412-f469-4ecf-b845-a7e15242f946.png">|<img width="50px" src="https://user-images.githubusercontent.com/82726832/153740625-f21a301a-8119-4cf1-bba7-72e65b118d27.png">| **Merge-Sort**: <br> It's one of divide and conquer|
- 
-## Use
-## Author
